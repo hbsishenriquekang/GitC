@@ -18,7 +18,7 @@ namespace ConsoleArray
                 var livro = listaDeLivros[i, 0];
                 var disponivel = listaDeLivros[i, 1];
 
-                Console.WriteLine($"Nome do livro: {livro} disponível: {disponivel}");
+                Console.WriteLine($"Nome do livro : {livro} disponível: {disponivel}");
 
             }
 
