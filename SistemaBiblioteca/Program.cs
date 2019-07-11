@@ -180,7 +180,6 @@ namespace SistemaBiblioteca
                 Console.Clear();
 
                 TextoLento("Listagem de livros: ");
-                Console.Clear();
 
                 MostrarListaDeLivros();
 
