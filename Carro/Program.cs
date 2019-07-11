@@ -14,6 +14,12 @@ namespace Carro
 
             while (true)
             {
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
                 Console.WriteLine("                                                                                         _  _      ");
                 Console.WriteLine("                                                                                        | || | _   ");
                 Console.WriteLine("                                  __                                                    | || || |  ");
@@ -24,6 +30,12 @@ namespace Carro
                 Console.WriteLine("___________________________(__)_____________(__)__________ _________________________________|_|- __");
                 Thread.Sleep(200);
                 Console.Clear();
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
                 Console.WriteLine("                                                                            _  _                   ");
                 Console.WriteLine("                                                                           | || | _                ");
                 Console.WriteLine("                                  __                                       | || || |               ");
@@ -34,6 +46,12 @@ namespace Carro
                 Console.WriteLine("___________________________(__)_____________(__)_______________________________|_|- _______________");
                 Thread.Sleep(200);
                 Console.Clear();
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
                 Console.WriteLine("                                                                 _  _                              ");
                 Console.WriteLine("                                                                | || | _                           ");
                 Console.WriteLine("                                  __                            | || || |                          ");
@@ -44,6 +62,12 @@ namespace Carro
                 Console.WriteLine("__________________ ________(__)_____________(__)____________________|_|- _________________________ ");
                 Thread.Sleep(200);
                 Console.Clear();
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
                 Console.WriteLine("                                                      _  _                                         ");
                 Console.WriteLine("                                                     | || | _                                      ");
                 Console.WriteLine("                                  __                -| || || |                                     ");
@@ -54,6 +78,12 @@ namespace Carro
                 Console.WriteLine("___________________________(__)_____________(__)____ ____|_|- _____________________________________");
                 Thread.Sleep(200);
                 Console.Clear();
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
                 Console.WriteLine("                                _  _                                                               ");
                 Console.WriteLine("                               | || | _                                                            ");
                 Console.WriteLine("                              -| || || |      __                                                   ");
@@ -64,19 +94,69 @@ namespace Carro
                 Console.WriteLine("___________________________(__)_____________(__)____________________________||__________/__.-'|_|--");
                 Thread.Sleep(200);
                 Console.Clear();
-                Console.WriteLine("     _  _                                                                                       _  _         ");
-                Console.WriteLine("    | || | _                                                                                   | || | _      ");
-                Console.WriteLine("   -| || || |                     __                                                  __      -| || || |             ");  
-                Console.WriteLine("    | || || |      ---   --  ~~~~( @)   |            ______                 ---      / _)      | || || |             ");
-                Console.WriteLine("     -_  || |     --  -- _________]_[__/_>________  |__  __|           --   _.----._/ /         -_  || |             ");
-                Console.WriteLine("        |  _/   ----  --/  ____ | <>     |  ____  |    ||          ---     /         /             |  _/             ");
-                Console.WriteLine("       -| |      ---- -=|_| __ |_|_______|_/ __ |__D   ||          -    __/ (  | (  |             -| |               ");
-                Console.WriteLine("___ ____|_|- ______________(__)_____________(__)_______||__________-___/__.-'|_|--|_|_________ ____|_|- _____________");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("     _  _                                                                                       ");
+                Console.WriteLine("    | || | _                                                                                    ");
+                Console.WriteLine("   -| || || |                     __                                                  __                ");  
+                Console.WriteLine("    | || || |      ---   --  ~~~~( @)   |            ______                 ---      / _)               ");
+                Console.WriteLine("     -_  || |     --  -- _________]_[__/_>________  |__  __|           --   _.----._/ /                 ");
+                Console.WriteLine("        |  _/   ----  --/  ____ | <>     |  ____  |    ||          ---     /         /                  ");
+                Console.WriteLine("       -| |      ---- -=|_| __ |_|_______|_/ __ |__D   ||          -    __/ (  | (  |                   ");
+                Console.WriteLine("___ ____|_|- ______________(__)_____________(__)_______||__________-___/__.-'|_|--|_|___________________");
                 Thread.Sleep(200);
                 Console.Clear();
-
-
-
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                                           ");
+                Console.WriteLine("                                                                                        _  _               ");
+                Console.WriteLine("                                                                                       | || | _            ");
+                Console.WriteLine("                          __                                                  __      -| || || |          ");
+                Console.WriteLine("                    -   ---  ~~~~( @)   |                           ---      / _)      | || || |          ");
+                Console.WriteLine("                 --  -   _________]_[__/_>________             --   _.----._/ /         -_  || |          ");
+                Console.WriteLine("                 -- --  /  ____ | <>     |  ____  |        ---     /         /             |  _/          ");
+                Console.WriteLine("                    -  =|_| __ |_|_______|_/ __ |__D       -    __/ (  | (  |             -| |            ");
+                Console.WriteLine("___________________________(__)_____________(__)___________-___/__.-'|_|--|_|_________ ____|_|- __________");
+                Thread.Sleep(200);
+                Console.Clear();
+                Console.WriteLine("                                                                      __                                           ");
+                Console.WriteLine("                                                                     / _)                                          ");
+                Console.WriteLine("                                                            _.----._/ /                                            ");
+                Console.WriteLine("                                                           /         /                                             ");
+                Console.WriteLine("                                                        __/ (  | (  |                                              ");
+                Console.WriteLine("                                                       /__.-'|_|--|_|                                              ");
+                Console.WriteLine("                                                              /    _  _               ");
+                Console.WriteLine("                                                       /  /     / | || | _            ");
+                Console.WriteLine("                           __                         /     /    -| || || |          ");
+                Console.WriteLine("     ______            --   - ~~~~( @)   |                        | || || |          ");
+                Console.WriteLine("    |__  __|          --  _________]_[__/_>________                -_  || |          ");
+                Console.WriteLine("       ||              --/  ____ | <>     |  ____  |                  |  _/          ");
+                Console.WriteLine("       ||         ---   =|_| __ |_|_______|_/ __ |__D                -| |            ");
+                Console.WriteLine("_______||___________________(__)_____________(__)________________ ____|_|- __________");
+                Thread.Sleep(200);
+                Console.Clear();
+                Console.WriteLine("                                                                                     __               ");
+                Console.WriteLine("                                                                           --       / _)              ");
+                Console.WriteLine("                                                                  ----     _.----._/ /                ");
+                Console.WriteLine("                                                                     -    /         /                 ");
+                Console.WriteLine("                                                                 --    __/ (  | (  |                  ");
+                Console.WriteLine("                                                              -       /__.-'|_|--|_|                  ");
+                Console.WriteLine("                                                                   _  _               ");
+                Console.WriteLine("                                                                  | || | _            ");
+                Console.WriteLine("                           __                                    -| || || |          ");
+                Console.WriteLine("     ______            --   - ~~~~( @)   |                        | || || |          ");
+                Console.WriteLine("    |__  __|          --  _________]_[__/_>________                -_  || |          ");
+                Console.WriteLine("       ||              --/  ____ | <>     |  ____  |                  |  _/          ");
+                Console.WriteLine("       ||         ---   =|_| __ |_|_______|_/ __ |__D                -| |            ");
+                Console.WriteLine("_______||___________________(__)_____________(__)________________ ____|_|- __________");
+                Console.Clear();
             }
 
         }
