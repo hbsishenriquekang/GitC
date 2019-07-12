@@ -83,8 +83,9 @@ namespace SistemaDeCarro
             Operacao("Locar Carro");
 
             var nomedocarro = Console.ReadLine();
+            var resultadoPesquisa = PesquisaCarro(ref nomedocarro);
 
-            if(MenuParaLocacao(nomedocarro))
+            if(resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 TextoLento($"Você deseja locar o carro {nomedocarro}? Digite o numero desejado SIM(1) NÃO(2)");
                 
@@ -105,8 +106,9 @@ namespace SistemaDeCarro
             ListarCarros();
 
             var nomedocarro = Console.ReadLine();
+            var resultadoPesquisa = PesquisaCarro(ref nomedocarro);
 
-            if (!MenuParaLocacao(nomedocarro))
+            if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
                 TextoLento($"Você deseja desalocar o carro {nomedocarro}? Digite o numero desejado SIM(1) NÃO(2)");
 
@@ -119,18 +121,39 @@ namespace SistemaDeCarro
                 ListarCarros();
                 Console.ReadKey();
             }
+            if(resultadoPesquisa == null)
+            {
+                TextoLento("Nenhum carro encontrado");
+
+
+            }
 
         }
-        public static bool MenuParaLocacao(string nomeCarro)
+        public static bool? PesquisaCarro(ref string nomeCarro)
         {
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
-                if(nomeCarro == baseDeDados[i,0])
+                if(CompararNomes(nomeCarro, baseDeDados[i,0]))
                 {
                     TextoLento($"O carro, {nomeCarro}" + $" pode ser alocado?: {baseDeDados[i, 2]}");
 
                     return baseDeDados[i, 2] == "Sim";
                 }  
+            }
+
+            TextoLento("Nenhum carro encontrado com esse nome");
+            TextoLento("Deseja pesquisar novamente? Digite o numero: Sim(1) Não(2)");
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+
+            if(opcao == 1)
+            {
+                TextoLento("Digite o nome do carro a ser pesquisado");
+                nomeCarro = Console.ReadLine();
+
+                return PesquisaCarro(ref nomeCarro);
+
+
             }
             return false;
         }
@@ -138,7 +161,7 @@ namespace SistemaDeCarro
         {
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
-                if(nomeCarro == baseDeDados[i,0])
+                if(CompararNomes(nomeCarro, baseDeDados[i,0]))
                 {
                     baseDeDados[i, 2] = disponibilidade? "Não" : "Sim";
 
@@ -170,6 +193,15 @@ namespace SistemaDeCarro
 
             }
 
+        }
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if(primeiro.ToLower().Replace(" ","") == segundo.ToLower().Replace(" ", ""))
+            {
+                return true;
+
+            }
+            return false;
         }
         protected static int origRow;// Ponto horizontal ( X )
 

@@ -79,8 +79,9 @@ namespace SistemaBiblioteca
             MostrarMenuInicialLivros("Alocar um livro");
 
             var nomedolivro = Console.ReadLine();
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
-            if (PesquisaLivroParaAlocacao(nomedolivro))
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 TextoLento("Você deseja alocar o livro? Para Sim(1) para Não(2)");
 
@@ -98,6 +99,7 @@ namespace SistemaBiblioteca
                 
                 Console.ReadKey();
             }
+            
 
         }
         /// <summary>
@@ -118,18 +120,31 @@ namespace SistemaBiblioteca
         /// </summary>
         /// <param name="nomeLivro"></param>Nome do livro a ser pesquisado
         /// <returns></returns>Retorna verdadeiro em caso o livro estiver livre pra alocação
-        public static bool PesquisaLivroParaAlocacao(string nomeLivro)
+        public static bool? PesquisaLivroParaAlocacao(ref string nomeLivro)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
-                if (nomeLivro == baseDeLivros[i, 0])
+                if (CompararNomes(nomeLivro, baseDeLivros[i, 0]))
                 {
                     TextoLento($"O livro, {nomeLivro}" + $" pode ser alocado?: {baseDeLivros[i, 1]}");
 
                     return baseDeLivros[i, 1] == "Sim";
                 }
             }
-            return false;
+            TextoLento("Nenhum livro encontrado, deseja realizar a busca novamente?");
+            TextoLento("Digite o número da opção desejada: Sim(1) Não(2)");
+
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+
+            if(opcao == 1)
+            {
+                TextoLento("Digite o nome do livro a ser pesquisado: ");
+                nomeLivro = Console.ReadLine();
+
+                return PesquisaLivroParaAlocacao(ref nomeLivro);
+            }
+
+            return null;
         }
         /// <summary>
         /// Metodo para alterar a informação de alocar o livro
@@ -140,7 +155,7 @@ namespace SistemaBiblioteca
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
-                if(nomeLivro == baseDeLivros[i,0])
+                if (CompararNomes(nomeLivro, baseDeLivros[i, 0]))
                 {
                     baseDeLivros[i, 1] = alocar? "Não" : "Sim";
                 }
@@ -167,15 +182,15 @@ namespace SistemaBiblioteca
             MostrarListaDeLivros();
 
             var nomedolivro = Console.ReadLine();
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(ref nomedolivro);
 
-            if (!PesquisaLivroParaAlocacao(nomedolivro))
+            if (resultadoPesquisa !=null && resultadoPesquisa == false)
             {
                 TextoLento("Você deseja desalocar o livro? Para Sim(1) para Não(2)");
 
                 AlocarLivro(nomedolivro, Console.ReadKey().KeyChar.ToString() == "0");
 
                 TextoLento("Livro desalocado!");
-
 
                 Console.Clear();
 
@@ -184,6 +199,11 @@ namespace SistemaBiblioteca
                 MostrarListaDeLivros();
 
                 Console.ReadKey();
+            }
+            if(resultadoPesquisa == null)
+            {
+                TextoLento("Nenhum livro encontrado com este nome");
+
             }
 
         }
@@ -194,6 +214,18 @@ namespace SistemaBiblioteca
             TextoLento("Digite o nome do livro para realizar a operação");
 
         }
+
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if(primeiro.ToLower().Replace(" ","") == segundo.ToLower().Replace(" ",""))
+            {
+                return true;
+
+            }
+            return false;
+        }
+
+        
         protected static int origRow;// Ponto horizontal ( X )
 
         protected static int origCol;// Ponto vertical ( Y )
