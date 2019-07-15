@@ -55,13 +55,13 @@ namespace AdicionarValoresEmUmaLista
 
             }
         }
-        public static void AumentaTamanhoLista(ref string[,] ListaDeNome)
+        public static void AumentaTamanhoLista(ref string[,] listaDeNome)
         {
             var limiteDaLista = true;
 
-            for (int i = 0; i < ListaDeNome.GetLength(0); i++)
+            for (int i = 0; i < listaDeNome.GetLength(0); i++)
             {
-                if(ListaDeNome[i,0] == null)
+                if(listaDeNome[i,0] == null)
                 {
                     limiteDaLista = false;
 
@@ -70,16 +70,16 @@ namespace AdicionarValoresEmUmaLista
             }
             if (limiteDaLista)
             {
-                var listaCopia = ListaDeNome;
-                ListaDeNome = new string[ListaDeNome.GetLength(0) + 5, 2];
+                var listaCopia = listaDeNome;
+                listaDeNome = new string[listaDeNome.GetLength(0) + 5, 2];
 
                 for (int i = 0; i < listaCopia.GetLength(0); i++)
                 {
-                    ListaDeNome[i, 0] = listaCopia[i, 0];
-                    ListaDeNome[i, 1] = listaCopia[i, 1];
+                    listaDeNome[i, 0] = listaCopia[i, 0];
+                    listaDeNome[i, 1] = listaCopia[i, 1];
 
                 }
-                Console.WriteLine("Tamanho da lista atualizado");
+                Console.WriteLine($"Tamanho da lista atualizado de {listaCopia.GetLength(0)} para {listaDeNome.GetLength(0)} ");
             }
 
         }
