@@ -15,7 +15,12 @@ namespace Lista2
             CarregaInformacoesEListaElasEmTela(ref listaDeNome);
 
             Console.ReadKey();
-            
+
+            Console.WriteLine("Informe o ID do registro a ser pesquisado");
+
+            PesquisandoInformacoesNaNossaLista(listaDeNome, Console.ReadLine());
+
+            Console.ReadKey();
         }
         public static void CarregaInformacoesEListaElasEmTela(ref string[,] arrayBi)
         {
@@ -30,7 +35,7 @@ namespace Lista2
                 Console.WriteLine($"ID:{arrayBi[i, 0]} - Nome: {arrayBi[i, 1]}");
             }
         }
-        public static void PesquisandoInformacoesNaNossaLista(ref string[,] arrayBi, string pId)
+        public static void PesquisandoInformacoesNaNossaLista(string[,] arrayBi, string pId)
         {
             for (int i = 0; i < arrayBi.GetLength(0); i++)
             {
@@ -41,6 +46,7 @@ namespace Lista2
 
                 }
             }
+            Console.WriteLine("Infelizmente a busca pelo id não resultou em nenhuma informação");
 
         }
     }
