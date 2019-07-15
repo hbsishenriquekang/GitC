@@ -14,7 +14,7 @@ namespace Lista
 
             for (int i = 0; i < lista.Length; i++)
             {
-                lista[i] = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss.fff");
+                lista[i] = string.Empty;
 
             }
             foreach(var item in lista)
