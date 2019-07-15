@@ -10,7 +10,9 @@ namespace Lista2
     {
         static void Main(string[] args)
         {
-            CarregaInformacoesEListaElasEmTela();
+            string[,] listaDeNome = new string[5, 2];
+
+            CarregaInformacoesEListaElasEmTela(ref listaDeNome);
 
             Console.ReadKey();
             
@@ -27,6 +29,19 @@ namespace Lista2
             {
                 Console.WriteLine($"ID:{arrayBi[i, 0]} - Nome: {arrayBi[i, 1]}");
             }
+        }
+        public static void PesquisandoInformacoesNaNossaLista(ref string[,] arrayBi, string pId)
+        {
+            for (int i = 0; i < arrayBi.GetLength(0); i++)
+            {
+                if(arrayBi[i,0] == pId)
+                {
+                    Console.WriteLine($"Informação escolhida: Id:{arrayBi[i,0]} - Nome:{arrayBi[i,1]}" );
+                    return;
+
+                }
+            }
+
         }
     }
 }
