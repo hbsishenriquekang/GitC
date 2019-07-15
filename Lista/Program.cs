@@ -10,18 +10,19 @@ namespace Lista
     {
         static void Main(string[] args)
         {
-            string[] lista = new string[10];
+            string[,] listaDeNome = new string[5,2];
 
-            for (int i = 0; i < lista.Length; i++)
+            for (int i = 0; i < listaDeNome.GetLength(0); i++)
             {
-                lista[i] = string.Empty;
+                listaDeNome[i, 0] = i.ToString();
+                listaDeNome[i, 1] = $"Felipe_{i}";
 
             }
-            foreach(var item in lista)
+            for (int i = 0; i < listaDeNome.GetLength(0); i++)
             {
-                Console.WriteLine(item);
-
+                Console.WriteLine($"ID:{listaDeNome[i,0]} - Nome: {listaDeNome [i,1]}");
             }
+            
             Console.ReadKey();
         }
     }
