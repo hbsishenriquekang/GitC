@@ -71,12 +71,13 @@ namespace AdicionarValoresEmUmaLista
             if (limiteDaLista)
             {
                 var listaCopia = listaDeNome;
-                listaDeNome = new string[listaDeNome.GetLength(0) + 5, 2];
+                listaDeNome = new string[listaDeNome.GetLength(0) + 5, 3];
 
                 for (int i = 0; i < listaCopia.GetLength(0); i++)
                 {
                     listaDeNome[i, 0] = listaCopia[i, 0];
                     listaDeNome[i, 1] = listaCopia[i, 1];
+                    listaDeNome[i, 2] = listaCopia[i, 2];
 
                 }
                 Console.WriteLine($"Tamanho da lista atualizado de {listaCopia.GetLength(0)} para {listaDeNome.GetLength(0)} ");

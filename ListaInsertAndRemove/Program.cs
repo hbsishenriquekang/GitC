@@ -12,7 +12,7 @@ namespace ListaInsertAndRemove
         {
             Console.WriteLine("Carregando o sistema");
 
-            string[,] baseDeDados = new string[2, 3];
+            string[,] baseDeDados = new string[2, 5];
 
             int IndiceBaseDeDados = 0;
 
@@ -25,7 +25,8 @@ namespace ListaInsertAndRemove
                     case "1": { InserirValoresNaLista(ref baseDeDados, ref IndiceBaseDeDados); } break;
                     case "2": { RemoverInformacoes(ref baseDeDados);  } break;
                     case "3": { MostrarInformacoes(baseDeDados); } break;
-                    case "4": { return; }
+                    case "4": { MostrarInformacoes(baseDeDados, "true"); } break;
+                    case "5": { return; }
 
                 }
 
@@ -34,11 +35,13 @@ namespace ListaInsertAndRemove
         }
         public static string MenuInicial()
         {
+            Console.Clear();
             Console.WriteLine("Menu");
             Console.WriteLine("1 - Inserir novo registro");
             Console.WriteLine("2 - Remover registro");
             Console.WriteLine("3 - Lista informações");
             Console.WriteLine("4 - Sair do sistema");
+            Console.WriteLine("5 - Sair do sistema");
 
             Console.WriteLine("Digite o número da opção desejada: ");
             return Console.ReadLine();
@@ -64,19 +67,36 @@ namespace ListaInsertAndRemove
 
                 }
                 baseDeDados[i, 0] = (indiceBase++).ToString();
-                baseDeDados[i, 0] = nome;
+                baseDeDados[i, 1] = nome;
                 baseDeDados[i, 2] = idade;
+                baseDeDados[i, 3] = "true";
+                baseDeDados[i, 4] = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+
+                break;
 
             }
             Console.WriteLine("Registro criado com sucesso, aperte qualquer tecla para voltar para o menu");
             Console.ReadKey();
 
         }
-        public static void MostrarInformacoes(string[,] baseDeDados)
+        public static void MostrarInformacoes(string[,] baseDeDados, string registrosNAtivos = "false")
         {
+
+            Console.WriteLine("Apresentação das informações dentro da base de dados");
+            if (registrosNAtivos == "true")
+            {
+                Console.WriteLine("Registros desativados dentro do sistema");
+
+            }
+
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
-                Console.WriteLine(string.Format("Id:{0} Nome:{1} - Idade:{2}", baseDeDados[i,0], baseDeDados[i,1], baseDeDados[i,2]));
+                if(baseDeDados[i,3] != "false")
+                {
+                    Console.WriteLine(string.Format("Id:{0} - Nome:{1} - Idade:{2} - Data Alteração:{3}", baseDeDados[i, 0], baseDeDados[i, 1], baseDeDados[i, 2], baseDeDados[i, 4]));
+
+                }
+                
             }
 
             Console.WriteLine("Resultados apresentados com sucesso");
@@ -89,8 +109,11 @@ namespace ListaInsertAndRemove
 
             for (int i = 0; i < baseDeDados.GetLength(0); i++)
             {
-                Console.WriteLine(string.Format("Id:{0} - Nome:{1} - Idade:{2}", baseDeDados[i, 0], baseDeDados[i, 1], baseDeDados[i, 2]));
+                if (baseDeDados[i, 3] != "false")
+                {
+                    Console.WriteLine(string.Format("Id:{0} - Nome:{1} - Idade:{2} - Data Alteração:{3}", baseDeDados[i, 0], baseDeDados[i, 1], baseDeDados[i, 2], baseDeDados[i, 4]));
 
+                }
             }
             Console.WriteLine("Informe o id do registro a ser removido:");
 
@@ -100,10 +123,8 @@ namespace ListaInsertAndRemove
             {
                 if (baseDeDados[i,0] != null && baseDeDados[i,0] == id)
                 {
-                    baseDeDados[i, 0] = null;
-                    baseDeDados[i, 1] = null;
-                    baseDeDados[i, 2] = null;
-
+                    baseDeDados[i, 3] = "false";
+                    baseDeDados[i, 4] = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
                 }
 
             }
@@ -125,13 +146,15 @@ namespace ListaInsertAndRemove
             if (limiteDaLista)
             {
                 var listaCopia = baseDeDados;
-                baseDeDados = new string[baseDeDados.GetLength(0) + 5, 2];
+                baseDeDados = new string[baseDeDados.GetLength(0) + 5, 5];
 
                 for (int i = 0; i < listaCopia.GetLength(0); i++)
                 {
                     baseDeDados[i, 0] = listaCopia[i, 0];
                     baseDeDados[i, 1] = listaCopia[i, 1];
                     baseDeDados[i, 2] = listaCopia[i, 2];
+                    baseDeDados[i, 3] = listaCopia[i, 3];
+                    baseDeDados[i, 4] = listaCopia[i, 4];
                 }
                 Console.WriteLine($"Tamanho da lista atualizado de {listaCopia.GetLength(0)} para {baseDeDados.GetLength(0)} ");
             }
