@@ -94,16 +94,16 @@ order by 'Quantidade' desc
 
 go
 
-select sum(Quantidade) as 'Quantidade', MONTH(DatInc) as 'Mês'
+select sum(Quantidade) as 'Quantidade', CONCAT(MONTH(DatInc), '/', YEAR(DatInc))
 from Vendas
-group by MONTH(DatInc)
+group by CONCAT(MONTH(DatInc), '/', YEAR(DatInc))
 order by 'Quantidade' desc
 
 go
 
-select sum(Valor * Quantidade) as 'Valor', MONTH(DatInc) as 'Mês'
+select sum(Valor * Quantidade) as 'Valor', CONCAT(MONTH(DatInc), '/', YEAR(DatInc))
 from Vendas
-group by MONTH(DatInc)
+group by CONCAT(MONTH(DatInc), '/', YEAR(DatInc))
 order by 'Valor' desc
 
 go
