@@ -19,6 +19,7 @@ namespace Banco.Classes
 
         public bool Sacar(double valor)
         {
+            
             if (valor <= saldo)
             {
                 saldo -= valor;

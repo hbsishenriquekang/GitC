@@ -11,6 +11,7 @@ namespace CantinaGG.Classes
         double saldo = 0;
         int pastel = 10;
 
+
         public double Saldo { get { return saldo; } }
         public Conta()
         {

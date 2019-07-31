@@ -28,7 +28,7 @@ namespace Banco
 
             }
 
-            Console.WriteLine($"Saldo atual disponivel:{accountUser.MostrarSaldo()}");
+            Console.WriteLine();
 
             Console.ReadKey();
 
