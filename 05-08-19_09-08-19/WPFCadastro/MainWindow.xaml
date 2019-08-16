@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFCadastro.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCadastro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="344.933" Width="633.067">
+    <Grid Margin="0,0,1.4,-0.8" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="0.052"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <TextBox x:Name="Nome" HorizontalAlignment="Left" Height="40" Margin="124,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286"/>
+        <TextBox x:Name="Telefone" HorizontalAlignment="Left" Height="40" Margin="124,181,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286" RenderTransformOrigin="0.481,-0.365"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="40" Margin="124,82,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="286"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Height="44" Margin="35,78,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="Telefone" HorizontalAlignment="Left" Height="44" Margin="35,127,0,0" VerticalAlignment="Top" Width="55"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Height="44" Margin="35,176,0,0" VerticalAlignment="Top" Width="55"/>
+        <Button x:Name="Salvar"  Content="Salvar" HorizontalAlignment="Left" Height="24" Margin="170,249,0,0" VerticalAlignment="Top" Width="193" Click="Salvar_Click"/>
+
+
+    </Grid>
+</Window>
